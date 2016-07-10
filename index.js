@@ -1,5 +1,5 @@
 var stream = require('readable-stream')
-var util = require('util')
+var inherits = require('inherits')
 
 var SIGNAL_FLUSH = new Buffer([0])
 
@@ -21,7 +21,7 @@ function WriteStream (opts, write, flush) {
   this._flush = flush || null
 }
 
-util.inherits(WriteStream, stream.Writable)
+inherits(WriteStream, stream.Writable)
 
 WriteStream.obj = function (opts, worker, flush) {
   if (typeof opts === 'function') return WriteStream.obj(null, opts, worker)
