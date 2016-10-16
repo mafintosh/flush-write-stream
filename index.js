@@ -47,6 +47,6 @@ WriteStream.prototype.end = function (data, enc, cb) {
 WriteStream.prototype.destroy = function (err) {
   if (this.destroyed) return
   this.destroyed = true
-  if (err) this.emit('error')
+  if (err) this.emit('error', err)
   this.emit('close')
 }
