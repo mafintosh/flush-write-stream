@@ -1,6 +1,6 @@
 {
   "name": "flush-write-stream",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A write stream constructor that supports a flush function that is called before finish is emitted",
   "main": "index.js",
   "dependencies": {
