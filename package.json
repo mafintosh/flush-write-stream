@@ -4,13 +4,16 @@
   "description": "A write stream constructor that supports a flush function that is called before finish is emitted",
   "main": "index.js",
   "dependencies": {
+    "inherits": "^2.0.1",
     "readable-stream": "^2.0.4"
   },
   "devDependencies": {
+    "browserify": "^13.0.1",
     "tape": "^4.2.2"
   },
   "scripts": {
-    "test": "tape test.js"
+    "test": "tape test.js",
+    "test-browser": "browserify test.js > bundle.js && echo '<script src=\"bundle.js\"></script>' > test.html"
   },
   "repository": {
     "type": "git",
