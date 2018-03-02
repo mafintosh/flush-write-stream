@@ -1,7 +1,12 @@
 var stream = require('readable-stream')
 var inherits = require('inherits')
 
-var SIGNAL_FLUSH = new Buffer([0])
+var SIGNAL_FLUSH
+if (Buffer.from && Buffer.from !== Uint8Array.from) {
+  SIGNAL_FLUSH = Buffer.from([0])
+} else {
+  SIGNAL_FLUSH = new Buffer([0])
+}
 
 module.exports = WriteStream
 
