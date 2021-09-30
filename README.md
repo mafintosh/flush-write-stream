@@ -11,9 +11,9 @@ npm install flush-write-stream
 ## Usage
 
 ``` js
-var writer = require('flush-write-stream')
+const Writer = require('flush-write-stream')
 
-var ws = writer(write, flush)
+var ws = new Writer(write, flush)
 
 ws.on('finish', function () {
   console.log('finished')
@@ -46,11 +46,11 @@ finished
 
 ## API
 
-#### `var ws = writer([options], write, [flush])`
+#### `const ws = new Writer([options], write, [flush])`
 
 Create a new writable stream. Options are forwarded to the stream constructor.
 
-#### `var ws = writer.obj([options], write, [flush])`
+#### `const ws = Writer.obj([options], write, [flush])`
 
 Same as the above except `objectMode` is set to `true` per default.
 
